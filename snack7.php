@@ -4,8 +4,24 @@ alunno. -->
 
 <?php
  
-   
- 
+$students = [
+    [
+        'nome' => 'Mario',
+        'cognome' => 'Rossi',
+        'voti' => [8, 7, 9]
+    ],
+    [
+        'nome' => 'Marco',
+        'cognome' => 'Verdi',
+        'voti' => [5, 6, 4]
+    ],
+    [
+        'nome' => 'Giuseppe',
+        'cognome' => 'Neri',
+        'voti' => [10, 4, 7]
+    ]
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +33,27 @@ alunno. -->
     <title>Snack 7</title>
 </head>
 <body>
+
+<?php
+
+        for( $i = 0; $i < count($students); $i++ ) {
+
+            ?>
+
+                <p> 
+                    <?php 
+                        echo $students[$i]['nome']; ?> <?php
+                        echo $students[$i]['cognome']; ?> <?php
+                        $media = array_sum($students[$i]['voti']) / count($students[$i]['voti']);
+                        echo  $media;
+                    ?>
+                </p>
+                
+            <?php
+
+        }
+
+    ?>
     
 </body>
 </html>
