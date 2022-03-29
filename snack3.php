@@ -45,6 +45,8 @@ $posts = [
     
 ];
 
+$key = array_keys($posts);
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +58,33 @@ $posts = [
     <title>Snack 3</title>
 </head>
 <body>
+
+    <?php
+
+    for ($i = 0; $i < count($key); $i++) {
+        ?>
+            <h3>
+                <?php echo $key[$i] ?>
+            </h3>
+        <?php
+
+        for ($j = 0; $j < count($posts[$key[$i]]); $j++) {
+        ?>
+            <p>
+                <?php echo  $posts[$key[$i]][$j]['title']?>
+            </p>
+            <p>
+                <?php echo  $posts[$key[$i]][$j]['author']?>
+            </p>
+            <p>
+                <?php echo  $posts[$key[$i]][$j]['text']?>
+            </p>
+        <?php
+        }
+    
+    }
+
+    ?>
     
 </body>
 </html>
