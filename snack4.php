@@ -3,7 +3,16 @@ numero più di una volta -->
 
 <?php
 
+$num = 15;
+$array = [];
 
+while ( count($array) < $num ) {
+    $number = rand(1, 100);
+
+    if ( !in_array($number, $array) ) {
+        $array[] = $number;
+    }
+}
 
 ?>
 
@@ -16,6 +25,18 @@ numero più di una volta -->
     <title>Snack 4</title>
 </head>
 <body>
+
+    <?php
+
+        for ( $i = 0; $i < count($array); $i++ ) {
+            ?>
+                <div>
+                    <?php echo $array[$i] ?>
+                </div>
+            <?php
+        }
+
+    ?>
     
 </body>
 </html>
